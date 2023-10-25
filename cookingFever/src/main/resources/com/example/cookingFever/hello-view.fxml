@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cookingFever.HelloController">
+   <children>
+      <AnchorPane fx:id="startscreen" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #d2f2bf;">
+         <children>
+            <ImageView fx:id="logoIMG" fitHeight="240.0" fitWidth="800.0" layoutX="250.0" layoutY="50.0" onMouseMoved="#setBackground" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pics/cookingFever.jpg" />
+               </image></ImageView>
+            <Button layoutX="579.0" layoutY="416.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #87d6b9;" text="Continue">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font></Button>
+            <Button layoutX="562.0" layoutY="337.0" mnemonicParsing="false" onAction="#howtoplay" style="-fx-background-color: #87d6b9;" text="How to Play">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ruleScreen" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #d2f2bf;" visible="false">
+         <children>
+            <Button layoutX="1175.0" layoutY="589.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #87d6b9;" text="Continue">
+               <font>
+                  <Font name="Perpetua" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="backtohome" layoutX="14.0" layoutY="589.0" mnemonicParsing="false" onAction="#mainScreen" style="-fx-background-color: #87d6b9;" text="Back to Home">
+               <font>
+                  <Font name="Perpetua" size="20.0" />
+               </font>
+            </Button>
+            <Label layoutX="575.0" layoutY="19.0" text="Objectives">
+               <font>
+                  <Font name="Microsoft JhengHei" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="252.0" layoutY="65.0" text="Complete all the orders in the level under the specified amount of time&#10;Don't lose any customers (this will happen if you go too slow)&#10;Make as much money as possible by completing the maximum amount of orders fastest" textAlignment="CENTER">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="561.0" layoutY="152.0" text="How To Play">
+               <font>
+                  <Font name="Microsoft JhengHei" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="161.0" layoutY="198.0" text="As soon as you see an order, begin cooking, you are racing against the clock.&#10;When you click on a food, it will start cooking and when it says ready, that food is ready to add to the order.&#10;If you want to add this food to the order that you are making, press the + button&#10;When you have added all the neccesary items to the order, click the customer you are serving from the List&#10;If a customer dissappears from the list, that means you were too slow to serve them, and they left.&#10;There is a time limit for each level, so even if you haven't served all the customers, time's up!&#10;&#10;Important: Some foods require multiple ingredients, so make sure to add all of them to the order&#10;If a customer asks for a Burger, you can make it by cooking a burger bun and patty.&#10;A customer can also choose to add tomato or lettuce to their burger.&#10;" textAlignment="CENTER">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="576.0" layoutY="485.0" text="Upgrades">
+               <font>
+                  <Font name="Microsoft JhengHei" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="163.0" layoutY="531.0" text="When you have accumulated enough money to make an upgrade, head to the Upgrade Shop&#10;Here you can purchase furniture for your restaurant, or reduce cooking times to help serve customers faster" textAlignment="CENTER">
+               <font>
+                  <Font name="Microsoft JhengHei Light" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="130.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pics/CookingFeverLogo.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="levelscreen" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #a7c8db;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="level1" fitHeight="250.0" fitWidth="300.0" layoutX="100.0" layoutY="104.0" pickOnBounds="true" />
+            <ImageView fx:id="level2" fitHeight="250.0" fitWidth="300.0" layoutX="500.0" layoutY="104.0" pickOnBounds="true" />
+            <ImageView fx:id="level3" fitHeight="250.0" fitWidth="300.0" layoutX="900.0" layoutY="104.0" pickOnBounds="true" />
+            <ImageView fx:id="level4" fitHeight="250.0" fitWidth="300.0" layoutX="300.0" layoutY="379.0" pickOnBounds="true" />
+            <ImageView fx:id="level5" fitHeight="250.0" fitWidth="300.0" layoutX="700.0" layoutY="379.0" pickOnBounds="true" />
+            <Label layoutX="414.0" layoutY="19.0" text="Select a Level" textFill="#f34242">
+               <font>
+                  <Font name="Century Gothic" size="70.0" />
+               </font>
+            </Label>
+            <Button fx:id="level1Button" layoutX="155.0" layoutY="260.0" mnemonicParsing="false" onAction="#startLevel1" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: #53E13D; -fx-background-radius: 10;" text="Level 1" textFill="#cfffc6">
+               <font>
+                  <Font name="Yu Gothic Bold" size="30.0" />
+               </font></Button>
+            <Button fx:id="level2Button" disable="true" layoutX="555.0" layoutY="260.0" mnemonicParsing="false" onAction="#startLevel2" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: #53E13D; -fx-background-radius: 10;" text="Level 2" textFill="#cfffc6">
+               <font>
+                  <Font name="Yu Gothic Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="level3Button" disable="true" layoutX="955.0" layoutY="260.0" mnemonicParsing="false" onAction="#startLevel3" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: #53E13D; -fx-background-radius: 10;" text="Level 3" textFill="#cfffc6">
+               <font>
+                  <Font name="Yu Gothic Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="level5Button" disable="true" layoutX="755.0" layoutY="535.0" mnemonicParsing="false" onAction="#startLevel5" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: #53E13D; -fx-background-radius: 10;" text="Level 5" textFill="#cfffc6">
+               <font>
+                  <Font name="Yu Gothic Bold" size="30.0" />
+               </font>
+            </Button>
+            <Button fx:id="level4Button" disable="true" layoutX="355.0" layoutY="535.0" mnemonicParsing="false" onAction="#startLevel4" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: #53E13D; -fx-background-radius: 10;" text="Level 4" textFill="#cfffc6">
+               <font>
+                  <Font name="Yu Gothic Bold" size="30.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="level1star2" fitHeight="80.0" fitWidth="85.0" layoutX="130.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level1star1" fitHeight="80.0" fitWidth="85.0" layoutX="210.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level1star3" fitHeight="80.0" fitWidth="85.0" layoutX="290.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level2star2" fitHeight="80.0" fitWidth="85.0" layoutX="530.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level2star1" fitHeight="80.0" fitWidth="85.0" layoutX="610.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level2star3" fitHeight="80.0" fitWidth="85.0" layoutX="690.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level3star2" fitHeight="80.0" fitWidth="85.0" layoutX="930.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level3star1" fitHeight="80.0" fitWidth="85.0" layoutX="1010.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level3star3" fitHeight="80.0" fitWidth="85.0" layoutX="1090.0" layoutY="154.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level5star2" fitHeight="80.0" fitWidth="85.0" layoutX="730.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level5star1" fitHeight="80.0" fitWidth="85.0" layoutX="810.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level5star3" fitHeight="80.0" fitWidth="85.0" layoutX="890.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level4star2" fitHeight="80.0" fitWidth="85.0" layoutX="330.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level4star1" fitHeight="80.0" fitWidth="85.0" layoutX="410.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="level4star3" fitHeight="80.0" fitWidth="85.0" layoutX="490.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="130.0" fitWidth="140.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pics/CookingFeverLogo.jpg" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" layoutX="140.0" layoutY="30.0" mnemonicParsing="false" onAction="#upgradeScreen" style="-fx-background-color: #5eb2cc;" text="Upgrades" textAlignment="CENTER">
+               <font>
+                  <Font name="Perpetua Bold" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="upgradeScreen" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #bcb1e3;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="554.0" text="Upgrades" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="75.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="104.0" text="Buy Automatic Tomato Cutter - reduce cooking time of tomatoes by .2 seconds">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font></Label>
+            <Label layoutX="99.0" layoutY="169.0" text="Buy Automatic Lettuce Cutter - reduce cooking time of lettuce by .2 seconds">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font></Label>
+            <Label layoutX="99.0" layoutY="234.0" text="Buy Faster Bun Cooker - reduce cooking time of burger bun and hotdog bun by .2 seconds">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font></Label>
+            <Label layoutX="99.0" layoutY="299.0" text="Buy Higher Quality Meat Griller - reduce cooking time of burger patty and sausage by .4 seconds">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font></Label>
+            <Label layoutX="99.0" layoutY="494.0" text="Buy Furniture for the Restaurant - each customer will wait for an extra .5 seconds">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="559.0" text="Add TV in the Restaurant - each customer will wait for an extra 1 second">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="364.0" text="Buy a Rapid Deep Fryer - reduce cooking time of french fries by .3 seconds">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="tomatoUpgradeB" layoutX="792.0" layoutY="101.0" mnemonicParsing="false" onAction="#tomatoUpgrade" style="-fx-background-color: #957ceb;" text="\$250   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="lettuceUpgradeB" layoutX="778.0" layoutY="172.0" mnemonicParsing="false" onAction="#lettuceUpgrade" style="-fx-background-color: #957ceb;" text="\$250   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="bunUpgradeB" layoutX="892.0" layoutY="231.0" mnemonicParsing="false" onAction="#bunUpgrade" style="-fx-background-color: #957ceb;" text="\$300   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="pattyUpgradeB" layoutX="942.0" layoutY="296.0" mnemonicParsing="false" onAction="#pattyUpgrade" style="-fx-background-color: #957ceb;" text="\$400   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="fryUpgradeB" layoutX="760.0" layoutY="361.0" mnemonicParsing="false" onAction="#fryUpgrade" style="-fx-background-color: #957ceb;" text="\$200   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="furnitureUpgradeB" layoutX="827.0" layoutY="491.0" mnemonicParsing="false" onAction="#furnitureUpgrade" style="-fx-background-color: #957ceb;" text="\$500   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="TVupgradeB" layoutX="736.0" layoutY="556.0" mnemonicParsing="false" onAction="#tvUpgrade" style="-fx-background-color: #957ceb;" text="\$1000   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="noMoneyLabel" layoutX="1086.0" layoutY="48.0" text="Not enough money" textFill="#ef0a0a" visible="false">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font></Label>
+            <ImageView fitHeight="130.0" fitWidth="140.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pics/CookingFeverLogo.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="99.0" layoutY="429.0" text="Advertise Restaurant in Local Newspaper - add a multiplier onto the price of each order to increase profits">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="multiplierUpgradeB" layoutX="1020.0" layoutY="426.0" mnemonicParsing="false" onAction="#multiplier" style="-fx-background-color: #957ceb;" text="\$600   Upgrade Count: 0" textAlignment="CENTER">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="1191.0" layoutY="581.0" mnemonicParsing="false" onAction="#startGame" style="-fx-background-color: #8a5788;" text="Back">
+               <font>
+                  <Font name="Bodoni MT Black" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="level1Screen" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #ffffff;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="pattyButton" layoutY="380.0" mnemonicParsing="false" onAction="#pattyClick" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="burgerpattyImg" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerpatty.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="bunButton" layoutY="510.0" mnemonicParsing="false" onAction="#bunClick" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="bunImg" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/bun.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="lettuceButton" layoutY="100.0" mnemonicParsing="false" onAction="#lettuceClick" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="lettuceImgV" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/lettuce.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="tomatoButton" layoutY="252.0" mnemonicParsing="false" onAction="#tomatoClick" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="tomatoImgV" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/tomatoes.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="hotdogbunButton" layoutX="150.0" layoutY="510.0" mnemonicParsing="false" onAction="#hotdogbunClick" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="hotdogbunImgV" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/hotdogbun.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="sausageButton" layoutX="150.0" layoutY="372.0" mnemonicParsing="false" onAction="#sausageClick" prefHeight="130.0" prefWidth="140.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="sausageImgV" fitHeight="118.0" fitWidth="130.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../../pics/sausage.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="cupcakeButton" layoutX="334.0" layoutY="188.0" mnemonicParsing="false" onAction="#cupcakeClick" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="cupcakeImgV" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cupcake.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="frenchfryButton" layoutX="319.0" layoutY="321.0" mnemonicParsing="false" onAction="#frenchfryClick" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="frenchfryImgV" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/deepfryer.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="colaButton" layoutX="326.0" layoutY="494.0" mnemonicParsing="false" onAction="#colaClick" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: #ffffff;">
+               <graphic>
+                  <ImageView fx:id="colaImgV" fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cola.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <ListView fx:id="ordersList" layoutX="690.0" layoutY="312.0" onMouseClicked="#checkOrder" prefHeight="250.0" prefWidth="390.0" style="-fx-border-color: #846791; -fx-border-width: 4;" />
+            <Label fx:id="lostC" layoutX="1092.0" layoutY="312.0" text="Customers Lost: 0">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="servedC" layoutX="1092.0" layoutY="343.0" text="Customers Served: 0">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="menu1" layoutX="684.0" layoutY="48.0" prefHeight="194.0" prefWidth="213.0" style="-fx-background-color: #97b8f0;" visible="false">
+               <children>
+                  <Label layoutX="22.0" layoutY="8.0" text="Menu" textFill="#1c0e64">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="43.0" text="Burger - $6.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="90.0" text="French Fries - $8.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="147.0" text="Coca Cola - $4.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerplain.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="125.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/frenchfries.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="107.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cocacola.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="menu2" layoutX="684.0" layoutY="48.0" prefHeight="224.0" prefWidth="240.0" style="-fx-background-color: #97b8f0;" visible="false">
+               <children>
+                  <Label layoutX="22.0" layoutY="8.0" text="Menu" textFill="#1c0e64">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="44.0" text="Burger - $6.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="141.0" text="French Fries - $8.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="198.0" text="Coca Cola - $4.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="88.0" text="Burger with Tomato - $9.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerplain.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="123.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/frenchfries.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="106.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cocacola.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgertomato.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="menu3" layoutX="684.0" layoutY="48.0" prefHeight="231.0" prefWidth="447.0" style="-fx-background-color: #97b8f0;" visible="false">
+               <children>
+                  <Label layoutX="22.0" layoutY="8.0" text="Menu" textFill="#1c0e64">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="44.0" text="Burger - $6.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="259.0" layoutY="44.0" text="French Fries - $8.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="259.0" layoutY="104.0" text="Coca Cola - $4.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="88.0" text="Burger with Tomato - $9.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerplain.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="368.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/frenchfries.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="351.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cocacola.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgertomato.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="140.0" text="Burger with Lettuce - $11.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="189.0" text="Burger with Tomato and Lettuce - $15.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerlettuce.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="239.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerlettucetomato.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="menu4" layoutX="684.0" layoutY="48.0" prefHeight="231.0" prefWidth="516.0" style="-fx-background-color: #97b8f0;" visible="false">
+               <children>
+                  <Label layoutX="22.0" layoutY="8.0" text="Menu" textFill="#1c0e64">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="44.0" text="Burger - $6.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="312.0" layoutY="110.0" text="French Fries - $8.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="312.0" layoutY="179.0" text="Coca Cola - $4.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="88.0" text="Burger with Tomato - $9.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerplain.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="421.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/frenchfries.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="404.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cocacola.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgertomato.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="140.0" text="Burger with Lettuce - $11.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="189.0" text="Burger with Tomato and Lettuce - $15.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerlettuce.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="239.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerlettucetomato.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="312.0" layoutY="44.0" text="Hot Dog - $10.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="409.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/hotdogpic.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="menu5" layoutX="684.0" layoutY="48.0" prefHeight="231.0" prefWidth="516.0" style="-fx-background-color: #97b8f0;" visible="false">
+               <children>
+                  <Label layoutX="22.0" layoutY="8.0" text="Menu" textFill="#1c0e64">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="44.0" text="Burger - $6.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="313.0" layoutY="92.0" text="French Fries - $8.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="313.0" layoutY="147.0" text="Coca Cola - $4.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="88.0" text="Burger with Tomato - $9.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="97.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerplain.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="422.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/frenchfries.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="65.0" fitWidth="85.0" layoutX="405.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cocacola.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgertomato.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="14.0" layoutY="140.0" text="Burger with Lettuce - $11.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="189.0" text="Burger with Tomato and Lettuce - $15.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="172.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerlettuce.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="58.0" fitWidth="56.0" layoutX="246.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/burgerlettucetomato.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="313.0" layoutY="44.0" text="Hot Dog - $10.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="410.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/hotdogpic.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="313.0" layoutY="194.0" text="Cupcake - $40.00">
+                     <font>
+                        <Font name="Franklin Gothic Heavy" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="56.0" fitWidth="56.0" layoutX="424.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../pics/cupcake.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ListView fx:id="currentOrderList" layoutX="495.0" layoutY="385.0" prefHeight="175.0" prefWidth="162.0" style="-fx-border-color: #846791; -fx-border-width: 3;" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="514.0" layoutY="363.0" text="Currently Preparing" textAlignment="CENTER">
+               <font>
+                  <Font name="Britannic Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="513.0" layoutY="566.0" mnemonicParsing="false" onAction="#discardOrder" style="-fx-background-color: f0c090;" text="Discard Current Plate">
+               <font>
+                  <Font name="Britannic Bold" size="11.0" />
+               </font>
+            </Button>
+            <Label layoutX="787.0" layoutY="282.0" text="Current Customers">
+               <font>
+                  <Font name="Britannic Bold" size="26.0" />
+               </font></Label>
+            <Button layoutX="20.0" layoutY="15.0" mnemonicParsing="false" onAction="#pauseGame" prefHeight="41.0" prefWidth="41.0" style="-fx-background-radius: 50; -fx-border-color: #62a36c; -fx-border-radius: 50; -fx-border-width: 3; -fx-background-color: #d4edca;" text="i">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </Button>
+            <Label fx:id="playLevelLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="26.0" prefHeight="74.0" prefWidth="220.0" text="Level 1" textAlignment="CENTER" textFill="#6582ed">
+               <font>
+                  <Font name="Impact" size="60.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="endScreen" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #aecbd4;" visible="false">
+         <children>
+            <Label fx:id="profitLabel" alignment="CENTER" layoutX="75.0" layoutY="316.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-color: #276a91; -fx-background-radius: 20;" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="40.0" />
+               </font></Label>
+            <Label fx:id="levelLabel" alignment="CENTER" layoutX="525.0" layoutY="22.0" prefWidth="250.0" text="Level" textAlignment="CENTER">
+               <font>
+                  <Font name="Perpetua" size="70.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="50.0" layoutY="277.0" prefWidth="200.0" text="Profits Made">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="800.0" layoutY="277.0" prefWidth="200.0" text="Customers Served">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1050.0" layoutY="277.0" prefWidth="200.0" text="Customers Lost">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font></Label>
+            <ImageView fx:id="star1" fitHeight="150.0" fitWidth="150.0" layoutX="575.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="star2" fitHeight="150.0" fitWidth="150.0" layoutX="400.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="star3" fitHeight="150.0" fitWidth="150.0" layoutX="750.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../pics/star.jpg" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER" layoutX="393.0" layoutY="509.0" mnemonicParsing="false" onAction="#mainScreen" prefWidth="151.0" style="-fx-background-color: #d0eaf2;" text="Home">
+               <font>
+                  <Font name="Perpetua" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="nextButton" alignment="CENTER" layoutX="668.0" layoutY="577.0" mnemonicParsing="false" onAction="#nextLevel" prefWidth="151.0" style="-fx-background-color: #d0eaf2;" text="Next Level">
+               <font>
+                  <Font name="Perpetua" size="24.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="749.0" layoutY="509.0" mnemonicParsing="false" onAction="#startGame" prefWidth="151.0" style="-fx-background-color: #d0eaf2;" text="Levels Screen">
+               <font>
+                  <Font name="Perpetua" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="levelFailed" layoutX="409.0" layoutY="140.0" prefHeight="84.0" prefWidth="582.0" text="LEVEL FAILED" textFill="#c10101" visible="false">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="70.0" />
+               </font>
+            </Label>
+            <Button fx:id="playAgainButton" alignment="CENTER" layoutX="475.0" layoutY="577.0" mnemonicParsing="false" onAction="#playAgain" prefWidth="151.0" style="-fx-background-color: #d0eaf2;" text="Play Again">
+               <font>
+                  <Font name="Perpetua" size="24.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="300.0" layoutY="277.0" prefWidth="200.0" text="Tips Earned">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" layoutX="574.0" layoutY="509.0" mnemonicParsing="false" onAction="#upgradeScreen" prefWidth="151.0" style="-fx-background-color: #d0eaf2;" text="Upgrades">
+               <font>
+                  <Font name="Perpetua" size="24.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="130.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../pics/CookingFeverLogo.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="tipLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="316.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-color: #276a91; -fx-background-radius: 20;" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="40.0" />
+               </font></Label>
+            <Label fx:id="servedLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="825.0" layoutY="316.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-color: #276a91; -fx-background-radius: 20;" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="60.0" />
+               </font></Label>
+            <Label fx:id="lostLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1075.0" layoutY="316.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-color: #276a91; -fx-background-radius: 20;" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="60.0" />
+               </font></Label>
+            <Label fx:id="totalLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="575.0" layoutY="316.0" prefHeight="160.0" prefWidth="150.0" style="-fx-background-color: #276a91; -fx-background-radius: 20;" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="40.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="550.0" layoutY="277.0" prefWidth="200.0" text="Total Made">
+               <font>
+                  <Font name="Perpetua" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="balanceLabel" layoutX="1020.0" layoutY="15.0" prefHeight="29.0" prefWidth="271.0" text="Money Balance: $0.00" textFill="#6c82d2" visible="false">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lettuceCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="100.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="lettuceReady" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="100.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="lettuceNone" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="100.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="tomatoCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="250.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+          <Label fx:id="tomatoReady" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="250.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="tomatoNone" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="250.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="pattyCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="395.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="pattyReady" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="395.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="pattyNone" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="395.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="bunCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="500.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="bunReady" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="500.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="bunNone" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="500.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="sausageCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="390.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="sausageReady" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="390.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="sausageNone" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="390.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+             <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="hotdogbunCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="510.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="hotdogbunReady" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="510.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="hotdogbunNone" alignment="CENTER" contentDisplay="CENTER" layoutX="140.0" layoutY="510.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="cupcakeCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="190.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="cupcakeReady" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="190.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="cupcakeNone" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="190.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="friesCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="310.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="friesReady" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="310.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="friesNone" alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" layoutY="310.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="colaCooking" alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="460.0" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: #ece641; -fx-background-radius: 60;" text="cooking" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="colaReady" alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="460.0" prefHeight="31.0" prefWidth="32.0" style="-fx-background-color: #39a942; -fx-background-radius: 60;" text="ready" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Label fx:id="colaNone" alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="460.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: #ec3f3f; -fx-background-radius: 60;" text="none" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Franklin Gothic Heavy" size="9.0" />
+         </font>
+      </Label>
+      <Button fx:id="lettuceAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="114.0" mnemonicParsing="false" onAction="#addLettuce" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="tomatoAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="254.0" mnemonicParsing="false" onAction="#addTomato" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="pattyAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="119.0" layoutY="393.0" mnemonicParsing="false" onAction="#addPatty" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="bunAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="526.0" mnemonicParsing="false" onAction="#addBun" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="sausageAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="265.0" layoutY="395.0" mnemonicParsing="false" onAction="#addSausage" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="colaAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="430.0" layoutY="490.0" mnemonicParsing="false" onAction="#addCola" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="hotdogbunAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="276.0" layoutY="525.0" mnemonicParsing="false" onAction="#addHotdogbun" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="frenchfryAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="323.0" mnemonicParsing="false" onAction="#addFrenchfry" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="cupcakeAdd" alignment="CENTER" contentDisplay="CENTER" layoutX="427.0" layoutY="200.0" mnemonicParsing="false" onAction="#addCupcake" style="-fx-background-color: #3598b6; -fx-background-radius: 50;" text="+" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Corbel Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
